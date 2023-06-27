@@ -12,7 +12,7 @@ const PublicNotes = () => {
         // Fetch user information for each note
         const notesWithAuthor = await Promise.all(
           data.map(async (note) => {
-            const userResponse = await fetch(`http://localhost:8000/notes/user/${note.id}`);
+            const userResponse = await fetch(`${process.env.REACT_APP_API_URL}/notes/user/${note.id}`);
             const userData = await userResponse.json();
             const author = userData.username;
 

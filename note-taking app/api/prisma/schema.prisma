@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                Int      @id @default(autoincrement())
+  email             String   @unique
+  auth0Id           String   @unique @default("")
+  username          String?
+  notes             Notes[]
+  profile           Profile?
+}
+
+model Profile {
+  id            Int    @id @default(autoincrement())
+  userId        Int    @unique
+  bio           String?
+  firstName     String?
+  lastName      String?
+  birthdate     DateTime?
+  user          User   @relation(fields: [userId], references: [id])
+}
+
+model Notes {
+  id            Int           @id @default(autoincrement())
+  userId        Int
+  title         String
+  content       String        @db.VarChar(10000)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime?     @updatedAt
+  privacyLevel  PrivacyLevel  @default(PRIVATE)
+  user          User          @relation(fields: [userId], references: [id])
+
+  @@unique([userId, id]) // Add unique constraint on userId and id
+}
+
+enum PrivacyLevel {
+  PUBLIC
+  PRIVATE
+}

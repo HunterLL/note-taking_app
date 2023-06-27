@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+* {
+  font-family: "PT Sans", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+.content {
+  padding: 20px;
+  background-color: #fff;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+
+table,
+td {
+  border: 1px solid rgb(0, 141, 184);
+  text-align: center;
+}
+
+thead {
+  background-color: rgb(47, 67, 255);
+  color: #fff;
+}
+
+th {
+  padding: 5px;
+}
+
+/* Header */
+h1{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 40px;
+
+
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-message{
+  text-align: right;
+}
+
+h2{
+  text-align: center;
+}
+
+/* nav bar */
+@media (max-width: 668px) {
+  .menu-list{
+    flex-direction: column;
+  }
+
+  .menu{
+    margin-right: 0px;
+  }
+
+}
+
+.menu-list {
+  list-style-type: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+  overflow: hidden;
+  
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-list li {
+  float: left;
+  border-right: 1px solid #bbb;
+  background-color: #4a4949;
+  
+}
+
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 50px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+/* buttons: login, sign up, exit  */
+.btn-primary,.btn-secondary, .exit-button {
+  background-color: #050b0c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .exit-button:hover {
+  background-color: grey;
+}
+
+.buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+.exit-button{
+  grid-column: span 2;
+}
+
+@media (min-width: 782px) {
+  .buttons{
+  position: absolute;
+  border-top: transparent solid 25px;
+  border-right: transparent solid 20px;
+  top: 0;
+  right: 0;
+  }
+
+}
+
+/* Homepage */
+/* note-counter */
+.note-counter-container{
+  text-align: center;
+  margin: 20px;
+}
+
+.note-counter {
+  font-size: 28px;
+  font-weight: bold;
+  color: midnightblue;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+
+.note-counter span{
+  color:#d9d912
+}
+
+/* NewNote form */
+.note-form-wrapper {
+  background-color: #ffffe0;
+  border: 1px solid #ffeb3b;
+  border-top: 12px solid #ffeb3b;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media  (max-width: 498px)  {
+  .note-form-wrapper{
+    width: 100%;
+  }
+}
+
+.note-form-wrapper label {
+  display: block;
+  font-weight: bolder;
+}
+
+.note-form-wrapper input[type="text"], .note-form-wrapper textarea {
+  width: 100%;
+  border: transparent
+}
+.note-form{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.note-form-wrapper .submit-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.note-form-wrapper input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.note-form-wrapper input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+textarea{
+  white-space: pre-wrap;
+}
+
+/*public-notes*/
+.individual-note{
+  width: 200px;
+  height: 160px;
+  background-color: #ffffe0;
+  border: 1px solid #ffeb3b;
+  border-top: 12px solid #ffeb3b;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 20px auto;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.individual-note br {
+  display: block;
+  content: "";
+  border-top: 1px dotted #000;
+  margin: 10px 5px;
+
+}
+.individual-note h3, .individual-note p{
+  margin-left: 5px;
+}
+.individual-note p:last-child{
+  margin-bottom: 5px;
+  color:gray;
+  font-size: smaller;
+}
+.individual-note p{
+  white-space: pre-wrap;
+}
+
+.public-notes{
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+/* quote */
+.quote{
+  width: 200px;
+  height: 160px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-top: 12px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 20px auto;
+  overflow: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.quote p:last-child{
+  color: grey;
+}
+
+/* Notes Page */
+.all-notes-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.all-notes-container .each-note:nth-child(odd){
+  background-color: #ddffdd;
+  border-top: 6px solid #04AA6D;
+}
+
+.all-notes-container .each-note:nth-child(even){
+  background-color: #ffdddd;
+  border-top: 6px solid #f44336;
+}
+
+/* individual note */
+.each-note{
+  width: 200px;
+  height: 160px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 20px auto;
+  overflow: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.each-note{
+  position: relative;
+}
+
+.private{
+  margin-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+
+.all-notes-container .each-note:nth-child(odd) .button {
+  background-color: #04AA6D;
+  border-color: #04AA6D;
+}
+.all-notes-container .each-note:nth-child(odd) .button:hover {
+  background-color: #0aee9b;
+  cursor: pointer;
+}
+
+.all-notes-container .each-note:nth-child(even) .button {
+  background-color: #f44336;
+  border-color: #f44336;
+}
+
+.all-notes-container .each-note:nth-child(even) .button:hover {
+  background-color: #e9736a;
+  cursor: pointer;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #fff;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.timestamp{
+  margin-top: 10px;
+  color: grey;
+}
+
+.each-note p{
+  margin-left: 10px;
+  text-align: start;
+}
+
+/* Notedetails page */
+.edit-note-detail.off-mode{
+  white-space: pre-wrap;
+}
+
+.edit-note-detail.off-mode button{
+  background-color: #000;
+}
+
+.edit-note-detail.off-mode button:hover{
+  background-color: #5a5757;
+  cursor: pointer;
+}
+
+.edit-note-detail.off-mode button:last-child{
+  margin-left: 10px;
+}
+
+.edit-note-detail.on-mode input, textarea{
+  display: block;
+  width: 50%
+}
+
+.edit-note-detail.on-mode{
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+}
+
+.edit-note-detail.on-mode input, textarea{
+  margin-bottom: 5px;
+}
+
+.edit-note-detail.on-mode textarea{
+  height:200px
+}
+
+select {
+  color: white;
+  background-color: brown;
+  border-radius: 0%;
+  width: 200px
+}
+
+.save-note, .cancel-note, .search.button{
+  background-color: rgb(221, 56, 56);
+  margin-left: 10px;
+}
+
+.save-note:hover, .cancel-note:hover, .search.button:hover{
+  background-color: brown;
+}
+
+/* Youtube API */
+.youtube-api-container input{
+  width: 200px;
+  height: 30px;
+}
+.youtube-api-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.youtube-api-container iframe {
+  width: 560px;
+  height: 315px;
+}
+
+@media (max-width: 768px) {
+  .youtube-api-container iframe {
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+  }
+}
+
+/* Profile page */
+.edit-profile-button, .profile-editor button{
+  display: inline-block;
+  padding: 8px 16px;
+  color: #fff;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: rgb(156, 156, 3);
+}
+.edit-profile-button:hover, .profile-editor button:hover{
+  cursor: pointer;
+  background-color: rgb(224, 224, 109);
+}
+
+.profile-editor button:last-child{
+  margin-left: 5px;
+}
+
+.profile-info{
+  width: 200px;
+  height: 250px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-top: 12px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 20px auto;
+  overflow: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.profile-editor label{
+  display: block;
+}
+.profile-editor small{
+  color: grey;
+}

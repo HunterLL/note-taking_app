@@ -26,11 +26,6 @@ export default function Profile() {
     birthdate: datetimeString,
   });
   const [editMode, setEditMode] = useState(false);
-
-  useEffect(() => {
-    fetchProfile();
-  });
-
   const fetchProfile = async () => {
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/profile`, {
@@ -62,6 +57,10 @@ export default function Profile() {
       console.error("Error fetching notes:", error);
     }
   };
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
 
   const handleEditClick = () => {
     setEditMode(true);

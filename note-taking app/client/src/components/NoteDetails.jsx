@@ -40,7 +40,7 @@ function NoteDetails() {
     };
 
     fetchNote();
-  }, [id, accessToken]);
+  }, []);
 
   const handleCancelEdit = () => {
     setEditMode(false);

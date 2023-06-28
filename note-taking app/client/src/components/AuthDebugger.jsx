@@ -7,11 +7,11 @@ export default function AuthDebugger() {
 
   return (
     <div className="auth-debugger">
-      <div>
+      <div className="debugger-item">
         <p>Access Token:</p>
-        <pre>{JSON.stringify(accessToken, null, 2)}</pre>
+        <p>{JSON.stringify(accessToken, null, 2)}</p>
       </div>
-      <div>
+      <div className="debugger-item">
         <p>User Info</p>
         <pre>{JSON.stringify(user, null, 2)}</pre>
       </div>

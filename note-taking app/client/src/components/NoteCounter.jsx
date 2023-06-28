@@ -1,17 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
-
 import { useAuthToken } from "../AuthTokenContext";
-
 import axios from 'axios';
 
-const NoteCounter = () => {
+const NoteCounter = ({onNoteAdded}) => {
   const { accessToken } = useAuthToken();
   const [noteCount, setNoteCount] = useState(0);
 
   useEffect(() => {
     fetchNoteCount();
-  });
+  }, [onNoteAdded]);
 
   const fetchNoteCount = async () => {
     try {
@@ -28,12 +25,6 @@ const NoteCounter = () => {
       console.error('Error fetching note count:', error);
     }
   };
-
-  // Fetch public notes every 2 seconds
-  useEffect(() => {
-    const interval = setInterval(fetchNoteCount, 100);
-    return () => clearInterval(interval);
-  });
 
   return (
     <div className='note-counter-container'>

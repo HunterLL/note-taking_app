@@ -34,12 +34,6 @@ const PublicNotes = () => {
     };
 
     fetchPublicNotes();
-
-    // Fetch public notes every 2 seconds
-    const interval = setInterval(fetchPublicNotes, 2000);
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
   }, []);
 
   return (

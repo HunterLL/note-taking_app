@@ -475,3 +475,9 @@ select {
 .profile-editor small{
   color: grey;
 }
+
+/* Auth Debugger page */
+
+.debugger-item {
+  white-space: pre-wrap;
+}

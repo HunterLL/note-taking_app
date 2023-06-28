@@ -16,7 +16,7 @@ const Notes = () => {
 
   useEffect(() => {
       fetchNotes();
-  });
+  }, []);
 
   useEffect(() => {
     // Update the URL when a note is selected
@@ -39,8 +39,10 @@ const Notes = () => {
     });
     
     if (response.ok) {
+      console.log("fetched notes!")
       const fetchedNotes = await response.json();
       setNotes(fetchedNotes);
+
     } else {
       console.log("Failed to fetch notes:", response.status);
     }

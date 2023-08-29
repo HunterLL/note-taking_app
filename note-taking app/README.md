@@ -4,7 +4,7 @@ https://note-taking-app-theta-gules.vercel.app/
 # Overview:  
 This app empowers users to create, edit, and delete notes seamlessly. Leveraging the YouTube external API within the note detail page, users can spark inspiration by entering keywords into the search bar and seamlessly integrate this inspiration into their notes. Moreover, users have the ability to share their notes with others by configuring them as public. These public notes are prominently displayed on the home page, fostering a sense of community engagement.
 
-# Main Pages:  
+## Main Pages:  
 - Home page  
 - Notes  
 - Note detail Page  
@@ -35,19 +35,19 @@ On this page, user can modify bio, first name, last name, birthday info by click
 ## Auth Debugger:  
 On this page, user can see access token and auth0 user info.
 
-# External API:  
-Youtube search API(location: Note details Page)  
-Quote API: quotable(location: Home Page)
+## External API:  
+- Youtube search API(location: Note details Page)  
+- Quote API: quotable(location: Home Page)
 
-# Responsive design: applied through css:  
+## Responsive design: applied through css:  
 Nav bar, notes, and button position of login and singup are
 the most noticeable places of the implementation of respoisve design.
 
-# Database requirements:  
+## Database requirements:  
 Three databases user, profile, note including enum PrivacyLevel
 
-# Reference:  
-https://github.com/lukePeavey/quotable  
-https://developers.google.com/youtube/v3/docs/search  
-https://www.w3schools.com/howto/howto_css_notes.asp  
+## Reference:  
+- https://github.com/lukePeavey/quotable  
+- https://developers.google.com/youtube/v3/docs/search  
+- https://www.w3schools.com/howto/howto_css_notes.asp  
 
